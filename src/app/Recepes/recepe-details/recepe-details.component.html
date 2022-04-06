@@ -1,0 +1,23 @@
+<div  *ngIf=" ReceDetails.name!=='' && !isNewRecepeEnabled " class="container">
+     <h3> Recepe Details for {{ReceDetails.name}} </h3>   <br>
+     <div class="row">
+        <div class="d-inline ">
+         <button class="btn btn-primary" (click)="EditRecepe(ReceDetails)"  type="button"> Edit </button>
+         <button (click)="DeleteRecepe()" class="btn btn-danger mx-4" style="margin: auto;" type="button"> Delete </button>
+         <button class="btn btn-success" type="button"> Add to Cart</button>
+        </div>
+        </div>
+     <br>
+    <img  style="height: 200px;margin-top:8px;" class="rounded-circle" src="{{ReceDetails.imgPath}}" alt="Recepe image">
+    <ul style="margin-top: 8px;" class="list-group">
+        <li>Description:-{{ReceDetails.desc}}</li>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let r of ReceDetails.Ingredients" >
+                {{r.name}} - {{r.amount}}
+            </li>
+        </ul>
+    </ul>
+
+</div>
+
+<app-recepe-edit *ngIf="isNewRecepeEnabled">  </app-recepe-edit>

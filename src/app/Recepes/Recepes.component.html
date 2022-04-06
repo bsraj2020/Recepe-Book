@@ -1,0 +1,27 @@
+<!--  
+<div *ngIf="content=='recepe'" class="row">
+    <div  style="padding-left: 50px;" class="col-md-12">
+        <app-recepes-list>
+        
+        </app-recepes-list>
+    </div>
+     <div class="col-md-8">
+       <app-recepe-details>
+
+       </app-recepe-details>
+    </div> 
+</div>
+<div *ngIf="content=='shopping'"   style="padding-left: 50px;"  class="row" >
+    <div class="col-md-12">
+        <app-shopping-list> </app-shopping-list>
+    </div>
+</div>
+
+ab routing se krenge 
+-->
+
+<div   style="padding-left: 50px;"  class="row" >
+    <div class="col-md-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>

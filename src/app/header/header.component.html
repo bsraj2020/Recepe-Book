@@ -1,0 +1,55 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink=""> {{ ShopName   }} </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+     
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" routerLinkActive="active">
+          <!-- ye shoeRecepe vgerah ki jarurat nhi hai ab RouteSe kam ho rha hai -->
+          <strong><a class="nav-link" routerLink="/recepe" (click)="ShowRecepes()" >Recepes  <span class="sr-only">(current)</span></a></strong>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <strong><a class="nav-link"  routerLink="/shopping"(click)="ShowShopping()" >Shopping List</a></strong>
+        </li>
+        <!-- Ye http k liye hai -->
+        <li class="nav-item active">
+          <strong><a class="nav-link" routerLink="/recepe" (click)="SaveRecepeHttp()" >Save Recepes</a></strong>
+        </li>
+        <li class="nav-item active" >
+          <strong><a class="nav-link" style="cursor: pointer;" (click)="FetchRecepeHttp()">Fetch Recepes</a></strong>
+        </li>
+        
+<!--  
+  async pipe
+        <li class="nav-item active" routerLinkActive="active">
+         <h6> AppName changeing name- {{changeShopName | async}} </h6>
+        </li> 
+-->
+
+    </ul>
+     
+        <div class="nav navbar-nav navbar-right active">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+
+    </div>
+  </nav>
+<hr>
+
+
+<app-recepes [content]="content" > 
+</app-recepes>

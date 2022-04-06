@@ -1,0 +1,36 @@
+
+
+<div style="margin: auto;" class="row">
+    <div class="col-xs-4">
+        <button class="btn btn-primary" routerLink="/recepe/new" (click)="OnNewRecepe()" type="button"> New Recepe </button>
+    </div>
+    <div style="margin: auto;" class="col-xs-4">
+       <label style="color: rgb(30, 51, 240);" for="label">Select Recepe to get details</label>
+    </div>
+</div> 
+<hr>
+ <div  style="margin: auto;" class="row">
+     <div style="width: 300px;" class="col-xs-6">
+         <a  class="list-group-item clearfix" *ngFor="let r of RecList;let i=index">
+             <div   style="cursor: pointer;" (click)="ItemClicked(r,i)"  class="pull-left">
+                <!-- direct bhi kr skte h [routelink]='[i]' -->
+                 <h3 class="list-group-item-heading">{{r.name}}</h3>
+                 <p class="list-group-item-text">{{r.desc}} </p>
+                </div>
+                <span class="pull-right">
+                    <img  class="rounded-circle" style="max-height: 75px;" 
+                    [src]="r.imgPath" alt="recepe_img">
+                    <!-- src="{{r.imgPath}}" YE BHILIKH SAKHTE hai -->
+                </span>
+         </a>
+     </div>
+
+     <div style="margin-left: 90px;" class="col-xs-6">
+         <app-recepe-details ></app-recepe-details>
+         <!-- <app-recepe-details [ReceDetails]="ReceDetails" ></app-recepe-details>
+             pehle ye tha 
+         -->
+     </div>
+
+ </div>
+

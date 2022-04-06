@@ -1,0 +1,36 @@
+
+<form (ngSubmit)="OnAddRecepe(f)" #f="ngForm">
+    
+    <div class="row">
+        <div class="col-xs-12">
+         <h3>Add New Recepe</h3>
+            <div class="form-group">
+                <strong><label for="RecepeName">Recepe Name:</label></strong>
+                <input name="name" type="text" class="form-control" ngModel required>
+        
+                <strong><label for="imgPath">Image Path:</label></strong>
+                <input [(ngModel)]="imgSource" name="imgPath" type="text" class="form-control" ngModel required>
+   
+                <img class="my-2" *ngIf="imgSource!='' " width=400 height=200  src="{{imgSource}}" alt="RecepeImg">
+             <br>
+                <strong><label for="desc">Description:</label></strong> <br>
+                <textarea class="push-left" name="desc"  cols="50" rows="5" ngModel required></textarea>
+               <br>
+                <button class="btn btn-success my-1" type="button" >Add Ingredient</button>
+                 
+               <br>
+                 <input  style="width: 200px;" placeholder="Ingredient Name" name="ingredient" 
+                 type="text" class="form-control d-inline" ngModel required> 
+                  <input style="width: 100px;" placeholder="amount" name="amount" type="number" 
+                  class="form-control d-inline mx-1" ngModel required>
+                
+                <br>
+               <button [disabled]="!this.f.valid"  class="btn btn-success" style="margin-top: 15px;" type="submit">Save Recepe</button>
+
+            </div>
+            
+
+        </div>
+    </div>
+
+</form>

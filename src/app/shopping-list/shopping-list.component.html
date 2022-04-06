@@ -1,0 +1,27 @@
+
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <!-- This is how we pass mesage from parebt to child in from of data -->
+     <app-shoping-edit  [data]="message" ></app-shoping-edit>
+     <!-- <app-shoping-edit (ingCreated)="OnIng_Added($event)" [data]="message" ></app-shoping-edit> 
+       pehle isse krt tha
+    -->
+        <div class="list-group">
+            <a (click)="OnClick_ShoppingList(idx)" class="list-group-item" style="cursor: pointer;" 
+            *ngFor="let i of ingreList;let idx=index" >
+             <!-- <p  [ngStyle]="{backgroundColor: (idx%2==0) ? 'yellow':'pink'}" > Ingredient: {{i.name}} ({{i.amount}}) </p> -->
+             <p  > Ingredient: {{i.name}} ({{i.amount}}) </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--
+    Uncomment me to see effect  
+
+<p app-BasicDirective> Style with basic Directive </p>
+<p betterStyleDirective> Style with Better (using renderer) Directive + HostListener </p>
+
+-->
